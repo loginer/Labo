@@ -31,9 +31,18 @@ var customerSeeds = [
 },
 
 ];
-if(Customers.find().count() === 0){
-  _.each(customerSeeds, function(customer){
+
+function addSeedCustomers(cs)
+{
+	if(Customers.find().count() === 0)
+	{
+  _.each(cs, function(customer)
+  		{
     Customers.insert(customer);
     console.log("Inserted ", customer.fName);
-  })
-}
+  		})
+	}
+};
+
+addSeedCustomers(customerSeeds);
+

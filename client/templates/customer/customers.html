@@ -1,57 +1,36 @@
 <template name="customers">
 <h1>Customers</h1>
+
+{{>addCustomerForm}}
+<br>
 <table class="table table-striped table-hover ">
   <thead>
     <tr>
-      <th>#</th>
-      <th>Column heading</th>
-      <th>Column heading</th>
-      <th>Column heading</th>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Phone</th>
+      <th>Orders Amount</th>
     </tr>
   </thead>
   <tbody>
+    {{#each customer}}
     <tr>
-      <td>1</td>
-      <td>Column content</td>
-      <td>Column content</td>
-      <td>Column content</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>Column content</td>
-      <td>Column content</td>
+      <td>{{_id}}</td>
+      <td>{{fName}} {{lName}}</td>
+      <td>{{mainPhone}}</td>
       <td>Column content</td>
     </tr>
-  <tr>
-      <td>3</td>
-      <td>Column content</td>
-      <td>Column content</td>
-      <td>Column content</td>
-    </tr>
-    <tr >
-      <td>4</td>
-      <td>Column content</td>
-      <td>Column content</td>
-      <td>Column content</td>
-    </tr>
-    <tr >
-      <td>5</td>
-      <td>Column content</td>
-      <td>Column content</td>
-      <td>Column content</td>
-    </tr>
-    <tr>
-      <td>6</td>
-      <td>Column content</td>
-      <td>Column content</td>
-      <td>Column content</td>
-    </tr>
-    <tr >
-      <td>7</td>
-      <td>Column content</td>
-      <td>Column content</td>
-      <td>Column content</td>
-    </tr>
+    {{/each}}  
   </tbody>
 </table> 
 </template>
+
+<template name ="addCustomerForm">
+  <form>
+    <input type="text" name="fName">
+    <input type="text" name="lName">
+    <input type="text" name="mainPhone">
+    <input type="submit" value="Add Customer">
+    
+    </form>
+  </template>
