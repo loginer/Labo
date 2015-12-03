@@ -1,0 +1,9 @@
+<template name ="searchCustomer">
+  
+	{{> EasySearch.Input index=customersIndex}}
+	<ul>
+			{{#EasySearch.Each index=customersIndex}}
+					<li> {{fName}} {{lName}} {{mainPhone}}</li>
+			{{/EasySearch.Each}}
+	</ul>
+  </template>

@@ -34,14 +34,20 @@ var customerSeeds = [
 
 function addSeedCustomers(cs)
 {
-	if(Customers.find().count() === 0)
+	customersRows = Customers.find().count();
+	if(customersRows === 0)
 	{
   _.each(cs, function(customer)
   		{
     Customers.insert(customer);
     console.log("Inserted ", customer.fName);
   		})
+		
 	}
+	else 
+		{	
+		console.log("There are ", customersRows);
+		}
 };
 
 addSeedCustomers(customerSeeds);
