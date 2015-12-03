@@ -1,9 +1,16 @@
 <template name ="searchCustomer">
-  
-	{{> EasySearch.Input index=customersIndex}}
-	<ul>
-			{{#EasySearch.Each index=customersIndex}}
-					<li> {{fName}} {{lName}} {{mainPhone}}</li>
-			{{/EasySearch.Each}}
-	</ul>
-  </template>
+	
+	{{> EasySearch.Input index=customersIndex }}
+	
+		{{#EasySearch.IfInputEmpty  index=customersIndex}}
+				<div> Enter string</div>
+		{{else}}
+				{{#EasySearch.Each index=customersIndex}}
+					<div class="result"> {{fName}} {{lName}} {{mainPhone}}</div>
+				{{/EasySearch.Each}}
+		{{/EasySearch.IfInputEmpty}}
+		
+				{{#EasySearch.IfNoResults index=customersIndex}}		
+					{{>addCustomerForm}}
+				{{/EasySearch.IfNoResults}}
+	</template>
