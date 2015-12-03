@@ -6,7 +6,6 @@
 
 autopublish
 insecure
-nemo64:bootstrap
 less
 iron:router
 aldeed:autoform
@@ -26,3 +25,4 @@ ejson
 spacebars
 check
 easy:search
+twbs:bootstrap
