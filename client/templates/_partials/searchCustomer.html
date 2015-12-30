@@ -1,6 +1,8 @@
 <template name ="searchCustomer">
 	
-	{{> EasySearch.Input index=customersIndex }}
+	{{> EasySearch.Autosuggest index=customersIndex}}
+	
+<!--  {{> EasySearch.Input index=customersIndex }} -->
 	
 		{{#EasySearch.IfInputEmpty  index=customersIndex}}
 				<div> Enter string</div>
