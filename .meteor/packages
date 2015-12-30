@@ -26,4 +26,8 @@ spacebars
 check
 easy:search
 twbs:bootstrap
+<<<<<<< HEAD
 easysearch:autosuggest
+=======
+msavin:mongol
+>>>>>>> origin/master
